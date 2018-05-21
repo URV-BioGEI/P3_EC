@@ -1,0 +1,109 @@
+
+nn
+-cache:dl1 dl1:64:32:4:l -cache:il1 il1:64:32:4:l -cache:dl2 ul2:64:32:4:l
+nn
+Results/applu.txt
+sim_IPC 2.0084
+bpred_bimod.bpred_dir_rate 0.8315
+Results/crafty.txt
+sim_IPC 0.4205
+bpred_bimod.bpred_dir_rate 0.9252
+Results/gzip.txt
+sim_IPC <error:
+bpred_bimod.bpred_dir_rate <error:
+Results/twolf.txt
+sim_IPC 1.7798
+bpred_bimod.bpred_dir_rate 0.9696
+Results/vortex.txt
+sim_IPC 0.5870
+bpred_bimod.bpred_dir_rate 0.9503
+nn
+
+nn
+Results/applu.txt
+sim_IPC 2.0182
+bpred_bimod.bpred_dir_rate 0.8315
+Results/crafty.txt
+sim_IPC 1.3492
+bpred_bimod.bpred_dir_rate 0.9252
+Results/gzip.txt
+sim_IPC <error:
+bpred_bimod.bpred_dir_rate <error:
+Results/twolf.txt
+sim_IPC 2.0801
+bpred_bimod.bpred_dir_rate 0.9696
+Results/vortex.txt
+sim_IPC 1.3541
+bpred_bimod.bpred_dir_rate 0.9503
+nn
+
+nn
+Results/applu.txt
+sim_IPC 2.0182
+bpred_bimod.bpred_dir_rate 0.8315
+Results/crafty.txt
+sim_IPC 1.3492
+bpred_bimod.bpred_dir_rate 0.9252
+Results/gzip.txt
+sim_IPC <error:
+bpred_bimod.bpred_dir_rate <error:
+Results/twolf.txt
+sim_IPC 2.0801
+bpred_bimod.bpred_dir_rate 0.9696
+Results/vortex.txt
+sim_IPC 1.3541
+bpred_bimod.bpred_dir_rate 0.9503
+nn
+
+nn
+Results/applu.txt
+sim_IPC 2.0182
+bpred_bimod.bpred_dir_rate 0.8315
+Results/crafty.txt
+sim_IPC 1.3492
+bpred_bimod.bpred_dir_rate 0.9252
+Results/gzip.txt
+sim_IPC <error:
+bpred_bimod.bpred_dir_rate <error:
+Results/twolf.txt
+sim_IPC 2.0801
+bpred_bimod.bpred_dir_rate 0.9696
+Results/vortex.txt
+sim_IPC 1.3541
+bpred_bimod.bpred_dir_rate 0.9503
+nn
+
+nn
+Results/applu.txt
+sim_IPC 2.0182
+bpred_bimod.bpred_dir_rate 0.8315
+Results/crafty.txt
+sim_IPC 1.3492
+bpred_bimod.bpred_dir_rate 0.9252
+Results/gzip.txt
+sim_IPC <error:
+bpred_bimod.bpred_dir_rate <error:
+Results/twolf.txt
+sim_IPC 2.0801
+bpred_bimod.bpred_dir_rate 0.9696
+Results/vortex.txt
+sim_IPC 1.3541
+bpred_bimod.bpred_dir_rate 0.9503
+nn
+
+nn
+Results/applu.txt
+sim_IPC 2.0182
+bpred_bimod.bpred_dir_rate 0.8315
+Results/crafty.txt
+sim_IPC 1.3492
+bpred_bimod.bpred_dir_rate 0.9252
+Results/gzip.txt
+sim_IPC <error:
+bpred_bimod.bpred_dir_rate <error:
+Results/twolf.txt
+sim_IPC 2.0801
+bpred_bimod.bpred_dir_rate 0.9696
+Results/vortex.txt
+sim_IPC 1.3541
+bpred_bimod.bpred_dir_rate 0.9503
