@@ -2,7 +2,7 @@
 
 # nombre:numerodeconjuntos:tamañodelinea:asociatividad
 # tamañodelinea/asociatividad * midatotal = numerodeconjuntos
-
+# 7+7+7+8+5+5+4 = 43
 parameters=(
 	# fase 1
 	# ex1
@@ -65,9 +65,16 @@ parameters=(
 	"-cache:il1 il1:128:64:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l"
 )
 
-rm -f "Results/*"
 mkdir Results
+cd Results
+> applu.txt
+> crafty.txt
+> twolf.txt
+> gzip.txt
+> vortex.txt
+cd ..
 mkdir Out
+
 > _Resultats
 
 # FASE 1
@@ -77,30 +84,31 @@ for i in ${parameters[@]}; do
 	echo ${parameters[$j]} >> _Resultats
 
 	echo "Applu" >> _Resultats
-	simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/applu.txt Benchmarks/applu/exe/applu.exe < Benchmarks/applu/data/ref/applu.in >> Out/applu.out 2>> Out/applu.err 
+	simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/applu.txt Benchmarks/applu/exe/applu.exe < Benchmarks/applu/data/ref/applu.in > Out/applu.out 2> Out/applu.err 
 	more Results/applu.txt | grep -E miss_rate >> _Resultats
 
 	echo "Crafty" >> _Resultats
-	simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/crafty.txt Benchmarks/crafty/exe/crafty.exe < Benchmarks/crafty/data/ref/crafty.in >> Out/crafty.out 2>> Out/crafty.err
+	simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/crafty.txt Benchmarks/crafty/exe/crafty.exe < Benchmarks/crafty/data/ref/crafty.in > Out/crafty.out 2> Out/crafty.err
 	more Results/crafty.txt | grep -E miss_rate >> _Resultats
 
 	echo "Twolf" >> _Resultats
-	simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/twolf.txt Benchmarks/twolf/exe/twolf.exe Benchmarks/twolf/data/ref/ref >> Out/twolf.out 2>> Out/twolf.err
+	simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/twolf.txt Benchmarks/twolf/exe/twolf.exe Benchmarks/twolf/data/ref/ref > Out/twolf.out 2> Out/twolf.err
 	more Results/twolf.txt | grep -E miss_rate >> _Resultats
 
 	echo "Vortex" >> _Resultats
 	cd Benchmarks/vortex/data/ref/
-	../../../../simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim ../../../../Results/vortex.txt ../../exe/vortex.exe lendian1.raw >> ../../../../Out/vortex.out 2>>  ../../../../Out/vortex.err  
+	../../../../simplesim-3.0_ecx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim ../../../../Results/vortex.txt ../../exe/vortex.exe lendian1.raw > ../../../../Out/vortex.out 2>  ../../../../Out/vortex.err  
 	cd ../../../../
 	more Results/vortex.txt | grep -E miss_rate >> _Resultats
 
-
 	echo "gzip" >> _Resultats
-	simplesim-3.0_ecx/sim-outorder ${parameters[$j]} -max:inst 10000000 -fastfwd 50000000 Benchmarks/gzip/exe/gzip.exe Benchmarks/gzip/data/ref/input.source 60 -redir:sim Out/gzip.err > Out/gzip.out 2>> Results/gzip.txt
+	simplesim-3.0_ecx/sim-outorder ${parameters[$j]} -max:inst 10000000 -fastfwd 50000000 Benchmarks/gzip/exe/gzip.exe Benchmarks/gzip/data/ref/input.source 60 -redir:sim Out/gzip.err > Out/gzip.out 2> Results/gzip.txt
 	more Results/gzip.txt | grep -E miss_rate >> _Resultats
 
 	let j=j+1
-
+	if [ "$j" == "43"]; then
+		break
+	fi
 
 done
 echo "Final fase 1"
