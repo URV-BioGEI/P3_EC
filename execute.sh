@@ -118,22 +118,7 @@ parameters2=(
 )
 
 for i in ${parameters[@]}; do
-	echo 
-	simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/applu.txt Benchmarks/applu/exe/applu.exe < Benchmarks/applu/data/ref/applu.in >> Out/applu.out 2>> Out/applu.err 
-
-	simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/crafty.txt Benchmarks/crafty/exe/crafty.exe < Benchmarks/crafty/data/ref/crafty.in >> Out/crafty.out 2>> Out/crafty.err
-
-	simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/twolf.txt Benchmarks/twolf/exe/twolf.exe Benchmarks/twolf/data/ref/ref >> Out/twolf.out 2>> Out/twolf.err
-
-	#simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/vortex.txt Benchmarks/vortex/exe/vortex.exe lendian1.raw >> Out/vortex.out 2>> Out/vortex.err  
-
-	cd Benchmarks/vortex/data/ref/
-	../../../../simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim ../../../../Results/vortex.txt ../../exe/vortex.exe lendian1.raw >> vortex.out 2>> vortex.err  
-	cd ../../../../
-
-	simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/gzip.txt Benchmarks/gzip/gzip/exe/gzip.exe < Benchmarks/gzip/gzip/data/ref/input.source >> Out/gzip.out 2>> Out/gzip.err 
-
-	# simplesim-3.0_acx/sim-outorder -fastfwd 50000000 -max:inst 10000000 ${parameters[$j]} -redir:sim Results/vpr.txt Benchmarks/vpr/exe/vpr.exe Benchmarks/vpr/data/ref/net.in Benchmarks/vpr/data/ref/arch.in Benchmarks/vpr/data/ref/route.out -nodisp -route_only -route_chan_width 15 -pres_fac_mult 2 -acc_fac 1 -first_iter_pres_fac 4 -initial_pres_fac 8 >> Out/vpr.out 2>> Out/vpr.err
+	
 
 
 	echo ${parameters[$j]}
@@ -149,46 +134,3 @@ done
 
 exit 0
 
-
-
-T3P3
--cache:il1 il1:32:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:64:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:128:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:256:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:512:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:2048:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
-T4P3
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:1024:32:1:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:2048:32:1:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:4096:32:1:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:8192:32:1:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:16384:32:1:l
-T5P3
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:1:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:2:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:8:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:16:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:32:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:64:l -cache:dl2 ul2:256:64:4:l
-T6P3
--cache:il1 il1:128:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:64:32:2:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:32:32:4:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:16:32:8:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:8:32:16:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:4:32:32:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:2:32:64:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1:32:128:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
-T7P3
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:8:1:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:16:1:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:32:1:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:1024:16:1:l -cache:dl1 dl1:128:64:1:l -cache:dl2 ul2:256:64:4:l
-T8P3
--cache:il1 il1:128:8:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:128:16:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:128:32:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
--cache:il1 il1:128:64:1:l -cache:dl1 dl1:64:32:4:l -cache:dl2 ul2:256:64:4:l
