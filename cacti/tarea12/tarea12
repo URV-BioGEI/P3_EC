@@ -1,0 +1,26 @@
+///////TASCA12
+////////////////64bytes
+Access time (ns): 0.633566
+Total dynamic read energy per access (nJ): 0.0878206
+Total leakage power of a bank (mW): 199.281
+Cache height x width (mm): 0.648038 x 1.12917
+
+////////////////128bytes
+Access time (ns): 0.633566
+Total dynamic read energy per access (nJ): 0.0863935
+Total leakage power of a bank (mW): 193.039
+Cache height x width (mm): 0.648038 x 1.02365
+
+
+///////////////256bytes
+Access time (ns): 0.633566
+Total dynamic read energy per access (nJ): 0.0851112
+Total leakage power of a bank (mW): 190.242
+Cache height x width (mm): 0.648038 x 0.971631
+
+///////////////512bytes
+    Access time (ns): 0.633566
+    Cycle time (ns):  1.63177
+    Total dynamic read energy per access (nJ): 0.084679
+    Total leakage power of a bank (mW): 188.657
+    Cache height x width (mm): 0.648038 x 0.971864
