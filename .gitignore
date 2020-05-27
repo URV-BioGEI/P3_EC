@@ -1,0 +1,10 @@
+*.htm
+*.html
+*.bin
+*.o
+*.out
+*.err
+nul
+*.001
+*.exe
+*.a
